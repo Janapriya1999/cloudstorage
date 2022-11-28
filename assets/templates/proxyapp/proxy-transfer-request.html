@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Proxy Page</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/images/favicon.png" />
+    
+  
+  <!-- material design icons -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+  <!-- buttons cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:./partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item sidebar-category">
+          <h1 class="text-white mb-2" style="font-family: Calibri; font-size: 30px;"> <i>Proxy</i></h1>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'proxy_home' %}">
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>DashBoard</i></span>
+            <!-- <div class="badge badge-info badge-pill">2</div> -->
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>Transfer <br> Operations</i></span>
+            
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{% url 'proxy_transfer_request' %}" style="font-family: Calibri; font-size: 20px;"><i>Transfer Request</i></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth1">
+            <!-- <iconify-icon icon="bxs:data"></iconify-icon> -->
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>Storage<br> Analysis</i></span>
+          </a>
+          <div class="collapse" id="auth1">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{% url 'proxy_storage_analysis' %}" style="font-family: Calibri; font-size: 20px;"><i>Graph Analysis</i></a></li>
+
+            </ul>
+          </div>
+        </li>
+        
+        
+        
+        
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:./partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          </button>
+          
+          <h2 class="font-weight-bold mb-0 d-none d-md-block mt-1 px-4" style="font-family: Cosmic Sans MS; font-size: 30px;"><i>Transfer Operations</i></h2>
+          <ul class="navbar-nav navbar-nav-right">
+
+            
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item">
+              <a href="{% url 'main_proxy_login' %}" class="nav-link icon-link">
+                <i class=" text-primary" style="font-size: 15px;"> &nbsp; Log Out</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Transfer Request</h4>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr class="text-white bg-dark">
+                          <th>URL</th>
+                          <th>File Name</th>
+                          <th>Client Name</th>
+                          <th>File Uploaded <br> Date & Time</th>
+                          <th>File Message</th>
+                          <th>Video</th>
+                          <th>File Size</th>
+                          <!-- <th>View</th> -->
+
+
+                          <th>File Actions</th>
+                          <th>File Transfer Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {% for i in post %}
+                          <tr>
+                            <td><a href="{{i.uploaded_video_file.url }}" target="_blank"
+                                class="text-primary">{{i.upload_file_name}}</a></td>
+                              <th>{{i.upload_file_name}}</th>
+                              <th>{{i.video_uploader.client_fullname}}</th>
+                            <td>{{i.file_uploaded_at}}</td>
+                            <td>{{i.upload_file_name}}</td>
+                            <td>{{i.uploaded_video_file}}</td>
+                            <td>{{i.uploaded_video_file.size|filesizeformat}}</td>
+  
+                            <td class="d-flex">
+                              <a href="accepted-uploaded-file/{{i.upload_file}}">
+                                <button type="button" class="btn cur-p btn-outline-success btn-md fa fa-check mr-3" style="padding-left: 25px; padding-right:25px ;"></button>
+                              </a>
+                              <a href="declined-uploaded-file/{{i.upload_file}}">
+                                <button type="button" class="btn cur-p btn-outline-danger btn-md fa fa-times" style="padding-left: 25px; padding-right:25px ;"></button>
+                              </a>
+                            </td>
+                            
+                            {% if i.upload_file_status == 'accepted' %}
+                            <td><label class="badge font-weight-bold text-white" style="font-size: 12px; background-color: rgb(57, 208, 57); border-radius: 20px;">Accepted</label></td>
+
+                            {% elif i.upload_file_status == 'pending' %}
+                            <td><label class="badge font-weight-bold text-white" style="font-size: 12px; background-color: rgb(130, 189, 248); border-radius: 20px;">Pending</label></td>
+
+                            {% else %}
+                            <td><label class="badge font-weight-bold text-white" style="font-size: 12px; background-color: rgb(234, 63, 97); border-radius: 20px;">Declined</label></td>
+                            {% endif %}
+                            
+                          </tr>
+                        {% endfor %}
+                          
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination ml-2">
+                  {% if post.has_previous %}
+                      <!-- <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li> -->
+                      <li class="page-item"><a class="page-link bg-info text-white" href="?page={{ post.previous_page_number }}">Previous</a></li>
+                  {% endif %}
+                  {% if post.has_next %}
+                  <li class="page-item"><a class="page-link bg-info text-white" href="?page={{ post.next_page_number }}">Next</a></li>
+                  <!-- <li class="page-item"><a class="page-link" href="?page={{ r.paginator.num_pages }}">Last &raquo;</a></li> -->
+                  {% endif %}
+              </ul>
+              Page {{ post.number }} of {{ post.paginator.num_pages }}.
+            </nav>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:./partials/_footer.html -->
+        <footer class="footer">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Hycloud - Tweaky Hybrid Cloud Storage All Rights Reserved 2022</span>
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Distributed By: <a href="https://codebook.in/" target="_blank"><b class="text-primary">Codebook</b></a></span>
+                <!-- <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Hycloud - Tweaky Hybrid Cloud Storage</span> -->
+              </div>
+              
+            </div>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <br>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+ <!-- base:js -->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/js/vendor.bundle.base.js"></script>
+ <!-- endinject -->
+ <!-- Plugin js for this page-->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/chart.js/Chart.min.js"></script>
+ <!-- End plugin js for this page-->
+ <!-- inject:js -->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/off-canvas.js"></script>
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/hoverable-collapse.js"></script>
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/template.js"></script>
+ <!-- endinject -->
+ <!-- plugin js for this page -->
+ <!-- End plugin js for this page -->
+ <!-- Custom js for this page-->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/dashboard.js"></script>
+ <!-- End custom js for this page-->
+</body>
+
+</html>

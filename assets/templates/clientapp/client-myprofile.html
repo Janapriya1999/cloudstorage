@@ -1,0 +1,358 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Client Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/favicon.ico">
+        <!-- CSS here -->
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/slicknav.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/flaticon.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/progressbar_barfiller.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/gijgo.css">
+        
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/animate.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/animated-headline.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/magnific-popup.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/themify-icons.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/slick.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/nice-select.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/style.css">
+        <!-- cdn for swal alert message -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="logo">
+                                    <a href="{% url 'client_home' %}" style="font-size: 20px; font-weight: bold;">
+                                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png" width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">                                                                                          
+                                                <li><a href="{% url 'client_home' %}">Home</a></li>
+                                                <li><a href="{% url 'client_upload' %}">Upload</a></li>
+                                                <li><a href="{% url 'client_myfiles' %}">My Files</a></li>
+                                                <li><a href="{% url 'client_myprofile' %}">My Profile</a></li>
+                                                <li><a href="{% url 'main_home' %}">Log Out</a></li>
+                                                
+                                               
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="slider-area slider-bg " style="height: 100px;">
+            <div class="slider-active">
+               
+                </div>
+            </div>
+<!-- my profile start -->
+<div class="container-xxl py-6">
+    <div class="row justify-content-center">
+        <h2 style="color: indigo; font-weight: bolder; text-align: center; margin-top: 100px;">My Profile</h2>
+
+    </div>
+    <br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-lg-6 mb-5">
+            <div class="card">
+                <div class="container rounded bg-white">
+                    <div class="row justify-content-center mt-2">
+                        
+                                    <img src="{{x.client_photo.url}}" alt="" style="border-radius: 50px; width: 80px; height: 80px;">
+    
+                                
+                        <div class="col-md-12 border-right">
+                            <div class="p-3 py-5">
+                                
+                                <div class="row mt-2">
+                                    <div class="col-md-6" >
+                                        <label class="labels text-dark" style="font-size: 20px;">Name</label>
+                                        <input type="text" style="height: 50px; font-size: 18px; color: black; font-weight: bolder;" name="fullname" class="form-control"  value="{{x.client_fullname}}" readonly>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="labels text-dark" style="font-size: 20px;">Contact</label>
+                                        <input type="tel" style="height: 50px; font-size: 18px; color: black; font-weight: bolder;" name="contact" class="form-control"  value="{{x.client_contact}}">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label class="labels text-dark" style="font-size: 20px;">Email</label>
+                                        <input type="email" style="height: 50px; font-size: 18px; color: black; font-weight: bolder;" name="email" class="form-control"  value="{{x.client_email}}" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="labels text-dark" style="font-size: 20px;">Password</label>
+                                        <input type="password" style="height: 50px; font-size: 18px; color: black; font-weight: bolder;" name="password" class="form-control"  value="{{x.client_password}}">
+                                    </div>
+                                </div>
+                                <div class="mt-5 text-center">
+                                    <a href="#" class="text-white">
+                                    <button class="btn-lg profile-button" type="submit" style="background-color:#55205a; color:white;">Update Profile</button>
+                                    </a> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-4">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                        <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                        <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+                    </div>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </form>
+    
+</div>
+
+<!-- my profile end -->
+
+            
+    </main>
+    
+    
+    
+    <footer style="margin-top: 100px;">
+        <div class="footer-wrappr"
+            data-background="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/gallery/footer-bg.png" >
+            <div class="footer-area footer-padding " style="height: 400px;">
+                <div class="container" >
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo mb-25">
+                                    <a href="{% url 'client_home' %}" style="font-size: 25px; font-weight: bold;">
+                                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png"
+                                            width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                                </div>
+                                <div class="footer-tittle mb-50">
+                                    <p>Cloud Storage is technology that allows you to save files in storage, and then access those files via the Cloud.</p>
+                                </div>
+                                <!-- Form -->
+                                
+                                <!-- social -->
+                                <!-- <div class="footer-social mt-50">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4></h4>
+                                    <ul>
+                                        <li><a href="{% url 'client_home' %}">Home</a></li>
+                                        <li><a href="{% url 'client_upload' %}">Uploads</a></li>
+                                        <li><a href="{% url 'client_myfiles' %}">My Files</a></li>
+                                        <li><a href="{% url 'client_myprofile' %}">My Profile</a></li>
+                                        
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Address</h4>
+                                    <ul>
+                                        <p>Sri Shankar Colony, <br>
+                                            Near Metro Station, <br>
+                                            LB.Nagar Road, <br> Hyderabad-500068 </p>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Contact</h4>
+                                    <ul>
+                                        <p> <span class="text-white">Email:</span> tweakyhycloud@gmail.com</p>
+                                        <p> <span class="text-white">Call:</span> 6300 656 232</p>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-copy-right text-center">
+                                    <p>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy; Hycloud - Tweaky Hybrid Cloud Storage
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved
+                                        <br> Designed by <a href="https://codebook.in/" target="_blank"> <b
+                                                style="font-weight: bolder; color:aliceblue;">Codebook</b> </a>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+<!-- JS here -->
+
+{% if messages %}
+    {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <script>swal({
+        title: "Successfully Profile Details Updated!",
+        text: "{{message}}",
+        icon: "success",
+        button: "OK",
+      });
+    </script>
+
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+    <script>swal({
+        title: "Warning :)",
+        text: "{{message}}",
+        icon: "warning",
+        button: "OK",
+      });
+    </script>
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+    <script>swal({
+        title: "error :)",
+        text: "{{message}}",
+        icon: "error",
+        button: "OK",
+      });
+    </script>
+    {% elif message.level == DEFAULT_MESSAGE_LEVELS.DANGER %}
+    <script>swal({
+        title: "error :)",
+        text: "{{message}}",
+        icon: "error",
+        button: "OK",
+      });
+    </script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/popper.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/owl.carousel.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/slick.min.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/wow.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/animated.headline.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.magnific-popup.js"></script>
+
+<!-- Date Picker -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/gijgo.min.js"></script>
+
+<!-- Video bg -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.vide.js"></script>
+
+<!-- Nice-select, sticky -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.nice-select.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.sticky.js"></script>
+<!-- Progress -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.barfiller.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.counterup.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/waypoints.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.countdown.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/contact.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.form.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.validate.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/mail-script.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/plugins.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Main Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/favicon.ico">
+        <!-- CSS here -->
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/slicknav.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/flaticon.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/progressbar_barfiller.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/gijgo.css">
+        
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/animate.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/animated-headline.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/magnific-popup.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/themify-icons.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/slick.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/nice-select.css">
+        <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/css/style.css">
+        
+    </head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/cloudlogo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="logo">
+                                    <a href="{% url 'main_home' %}" style="font-size: 20px; font-weight: bold;">
+                                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/cloudlogo.png" width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{% url 'main_home' %}">Home</a></li>
+                                                <li><a href="{% url 'main_about' %}">About</a></li>
+                                                <li><a href="{% url 'main_proxy_login' %}">Proxy</a></li>
+                                                <li><a href="{% url 'main_controller_login' %}">Controller</a></li>
+                                                <li><a href="{% url 'main_client_login' %}">Client</a></li>
+                                                <li><a href="{% url 'main_contact' %}">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="slider-area slider-bg ">
+            <div class="slider-active">
+                <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height3">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption3 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">About Us</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <!-- Slider Area End -->
+                <!-- <div class="single-slider d-flex align-items-center slider-height ">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-9 ">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInLeft" data-delay=".3s">Best Domain & hosting service provider</span>
+                                    <h1 data-animation="fadeInLeft" data-delay=".6s">Powerful web hosting</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".8s">Supercharge your WordPress hosting with detailed 
+                                        website analytics, marketing tools, security, and data 
+                                    backups all in one place.</p>
+                                    <div class="slider-btns">
+                                        <a data-animation="fadeInLeft" data-delay="1s" href="industries.html" class="btn radius-btn">get started</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero__img d-none d-lg-block f-right">
+                                    <img src="assets/img/hero/hero_right.png" alt="" data-animation="fadeInRight" data-delay="1s">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>       -->
+            </div>
+            
+        </div>
+        
+    </div>
+    <!-- Domain-search End -->
+    <!--? Team -->
+    
+    <!-- Services End -->
+    <!--? Pricing Card Start -->
+    
+    <!-- Pricing Card End -->
+    <!--? About-1 Area Start -->
+    <div class="about-area1 section-padding40">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-5 col-lg-5 col-md-8 col-sm-10">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/l1.webp" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-12">
+                    <div class="about-caption ">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 mb-30">
+                            <h2>About</h2>
+                        </div>
+                        <p class="mb-40">Hybrid cloud storage is a type of cloud storage model that derives and combines the functionality of public and private cloud storage models to provide storage services. These services are accessed using a Web services API framework or cloud applications.</p>
+                        <ul>
+                            <li>
+                                <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/icon/right.svg" alt="">
+                                <p>Public cloud: Virtual resources and IT services provided by third-party providers over the Internet for multiple mandates simultaneously. </p>
+                            </li>
+                            <li>
+                                <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/icon/right.svg" alt="">
+                                <p>Private cloud: Computing services and IT environments that are not provided and hosted for multiple clients, but in-house as intranets or data centers. The cloud environment is reserved for one organization.</p>
+                            </li>
+                            <li>
+                                <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/icon/right.svg" alt="">
+                                <p>API frameworks are code libraries that provide well-tested, commonly-used functionality when building a web API.</p>
+                            </li>
+                            <li>
+                                <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/icon/right.svg" alt="">
+                                <p>A cloud app is an application that operates in the cloud. Cloud apps are considered to be a blend of standard Web applications and conventional desktop applications. Cloud apps incorporate the advantages of both Web and desktop apps without absorbing many of their drawbacks.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</main>
+<footer>
+    <div class="footer-wrappr " data-background="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/gallery/footer-bg.png">
+        <div class="footer-area footer-padding ">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <!-- logo -->
+                            <div class="footer-logo mb-25">
+                                <a href="{% url 'main_home' %}" style="font-size: 25px; font-weight: bold;">
+                                    <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/img/cloudlogo.png" width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                            </div>
+                            <div class="footer-tittle mb-50">
+                                <p>Subscribe our newsletter to get updates about our services</p>
+                            </div>
+                            <!-- Form -->
+                            <div class="footer-form">
+                                <div id="mc_embed_signup">
+                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                Subscribe
+                                            </button>
+                                        </div>
+                                        <div class="mt-10 info"></div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- social -->
+                            <div class="footer-social mt-50">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4></h4>
+                                <ul>
+                                    <li><a href="{% url 'main_home' %}">Home</a></li>
+                                    <li><a href="{% url 'main_about' %}">About</a></li>
+                                    <li><a href="{% url 'main_proxy_login' %}">Proxy</a></li>
+                                    <li><a href="{% url 'main_controller_login' %}">Controller</a></li>
+                                    <li><a href="{% url 'main_client_login' %}">Client</a></li>
+                                    <li><a href="{% url 'main_contact' %}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Address</h4>
+                                <ul>
+                                    <p>Sri Shankar Colony, <br>
+                                        Near Metro Station, <br>
+                                        LB.Nagar Road, <br> Hyderabad-500068 </p>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Contact</h4>
+                                <ul>
+                                    <p> <span class="text-white">Email:</span> tweakyhycloud@gmail.com</p>
+                                    <p> <span class="text-white">Call:</span>  6300 656 232</p>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                  Copyright &copy; Hycloud - Tweaky Hybrid Cloud Storage<script>document.write(new Date().getFullYear());</script> All rights reserved <br> Designed by <a href="https://codebook.in/" target="_blank"> <b style="font-weight: bolder; color:aliceblue;">Codebook</b> </a>
+                                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/popper.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/owl.carousel.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/slick.min.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/wow.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/animated.headline.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.magnific-popup.js"></script>
+
+<!-- Date Picker -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/gijgo.min.js"></script>
+
+<!-- Video bg -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.vide.js"></script>
+
+<!-- Nice-select, sticky -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.nice-select.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.sticky.js"></script>
+<!-- Progress -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.barfiller.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.counterup.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/waypoints.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.countdown.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/contact.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.form.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.validate.min.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/mail-script.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/plugins.js"></script>
+<script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/mainapp/js/main.js"></script>
+
+</body>
+</html>

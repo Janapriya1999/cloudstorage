@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Proxy Page</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/images/favicon.png" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+  </head>
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:./partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item sidebar-category">
+          
+          <h1 class="text-white mb-2" style="font-family: Calibri; font-size: 30px;"> <i>Proxy</i>
+          </h1>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'proxy_home' %}">
+            
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>DashBoard</i></span>
+            <!-- <div class="badge badge-info badge-pill">2</div> -->
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>Transfer <br> Operations</i></span>
+            
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{% url 'proxy_transfer_request' %}" style="font-family: Calibri; font-size: 20px;"><i>Transfer Request</i></a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#auth1" aria-expanded="false" aria-controls="auth1">
+            <!-- <iconify-icon icon="bxs:data"></iconify-icon> -->
+            <span class="menu-title" style="font-family: Calibri; font-size: 20px;"><i>Storage<br> Analysis</i></span>
+          </a>
+          <div class="collapse" id="auth1">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{% url 'proxy_storage_analysis' %}" style="font-family: Calibri; font-size: 20px;"><i>Graph Analysis</i></a></li>
+
+            </ul>
+          </div>
+        </li>
+        
+        
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:./partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            
+          </button>
+          <div class="navbar-brand-wrapper">
+            
+          </div>
+          <h2 class="font-weight-bold mb-0 d-none d-md-block mt-1 px-4" style="font-family: Calibri;font-size: 30px; "><i>DashBoard</i></h2>
+          <ul class="navbar-nav navbar-nav-right">
+
+            
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item">
+              <a href="{% url 'main_proxy_login' %}" class="nav-link icon-link">
+                <i style="font-size: 15px;"> &nbsp; Log Out</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          
+          
+          <!-- row end -->
+          <div class="row justify-content-center">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-facebook d-flex align-items-center" style="background-color: rgb(5, 153, 5);">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <h5 class="text-white font-weight-bold">User Accepted In User Managament</h5>
+                      <p class="mt-2 text-white card-text" style="font-weight: bolder; color: white; font-size: 25px;">{{y}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card" >
+              <div class="card bg-google d-flex align-items-center" style="background-color: grey;">
+                <div class="card-body py-5" >
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <div class="ml-3 ml-md-0 ml-xl-3" >
+                      <h5 class="text-white font-weight-bold">User Pending In User Managament</h5>
+                      <p class="mt-2 text-white card-text" style="font-weight: bolder; color: white; font-size: 25px;">{{x}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-twitter d-flex align-items-center" style="background-color: rgba(172, 114, 7, 0.801);">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <h5 class="text-white font-weight-bold">User Declined In User Managament</h5>
+                      <p class="mt-2 text-white card-text" style="font-weight: bolder; color: white; font-size: 25px;">{{z}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card bg-twitter d-flex align-items-center" style="background-color: rgb(202, 57, 57);">
+                <div class="card-body py-5">
+                  <div
+                    class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
+                    <div class="ml-3 ml-md-0 ml-xl-3">
+                      <h5 class="text-white font-weight-bold">Files in Transfer Operations</h5>
+                      <p class="mt-2 text-white card-text" style="font-weight: bolder; color: white; font-size: 25px;">{{p}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+          <!-- row end -->
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:./partials/_footer.html -->
+        <footer class="footer">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Hycloud - Tweaky Hybrid Cloud Storage All Rights Reserved 2022</span>
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Distributed By: <a href="https://codebook.in/" target="_blank"><b class="text-primary">Codebook</b></a></span>
+                <!-- <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Hycloud - Tweaky Hybrid Cloud Storage</span> -->
+              </div>
+              
+            </div>
+          </div>
+        </footer>
+        <br>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <script>swal({
+          title: "Login Success!",
+          text: "{{message}}",
+          icon: "success",
+          button: "OK",
+      });
+  </script>
+
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+  <script>swal({
+          title: "Warning :)",
+          text: "{{message}}",
+          icon: "warning",
+          button: "OK",
+      });
+  </script>
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+  <script>swal({
+          title: "error :)",
+          text: "{{message}}",
+          icon: "error",
+          button: "OK",
+      });
+  </script>
+  {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <script>swal({
+          title: "error :)",
+          text: "{{message}}",
+          icon: "error",
+          button: "OK",
+      });
+  </script>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  <!-- base:js -->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/js/vendor.bundle.base.js"></script>
+ <!-- endinject -->
+ <!-- Plugin js for this page-->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/vendors/chart.js/Chart.min.js"></script>
+ <!-- End plugin js for this page-->
+ <!-- inject:js -->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/off-canvas.js"></script>
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/hoverable-collapse.js"></script>
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/template.js"></script>
+ <!-- endinject -->
+ <!-- plugin js for this page -->
+ <!-- End plugin js for this page -->
+ <!-- Custom js for this page-->
+ <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/proxyapp/js/dashboard.js"></script>
+ <!-- End custom js for this page-->
+
+
+
+</body>
+
+</html>
+
+
+<!-- <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script> -->

@@ -1,0 +1,428 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Client Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/favicon.ico">
+    <!-- CSS here -->
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/slicknav.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/flaticon.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/progressbar_barfiller.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/gijgo.css">
+
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/animate.min.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/animated-headline.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/magnific-popup.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/fontawesome-all.min.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/themify-icons.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/slick.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/nice-select.css">
+    <link rel="stylesheet"
+        href="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/css/style.css">
+    <!-- cdn for swal alert message -->
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+</head>
+
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-4 col-lg-4">
+                                <div class="logo">
+                                    <a href="{% url 'client_home' %}" style="font-size: 20px; font-weight: bold;">
+                                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png"
+                                            width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{% url 'client_home' %}">Home</a></li>
+                                                <li><a href="{% url 'client_upload' %}">Upload</a></li>
+                                                <li><a href="{% url 'client_myfiles' %}">My Files</a></li>
+                                                <li><a href="{% url 'client_myprofile' %}">My Profile</a></li>
+                                                <li><a href="{% url 'main_home' %}">Log Out</a></li>
+
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!-- Slider Area Start-->
+        <div class="slider-area slider-bg" style="height: 100px;">
+            <div class="slider-active">
+
+            </div>
+        </div>
+
+
+        <div class="main-panel mt-5 mb-5">
+            <div class="content-wrapper">
+                <h2 style="color: indigo; font-weight: bolder; text-align: center; margin-top: 100px;">My Files</h2>
+                <br>
+                <!-- <div class="row justify-content-center">
+                    <h1 class="text-center px-5 py-5"><b
+                            style="background-color: #55205a; color: white; border-radius: 20px; font-size: large; color: white;">&nbsp;
+                            &nbsp;My Files&nbsp;&nbsp; </b></h1>
+                </div> -->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 grid-margin stretch-card">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <!-- <h4 class="card-title">My Files</h4> -->
+
+                                <div class="table-responsive">
+
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr class="" style="height: 60px; background-color: #55205a; color: white;">
+                                                <th>API Key</th>
+                                                <th>File Name</th>
+                                                <th>File Uploaded Date</th>
+                                                <th>File Message</th>
+                                                <th>Video</th>
+                                                <!-- <th>Length</th> -->
+                                                <th>Size</th>
+                                                <th>S3 Files</th>
+                                                <th>EFS Files</th>
+                                                <th>File Transfer</th>
+                                                <th>Final Status</th>
+
+
+                                                <!-- <th>File Transfer Actions</th>
+                                                <!-- <th>Status</th> -->
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <form method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+
+                                                {% for i in post %}
+                                                <!-- <h1>{{ i.random_id }}</h1> -->
+
+                                                <tr>
+                                                    <td><a href="{{i.uploaded_video_file.url }}" target="_blank"
+                                                            class="text-primary">{{i.random_id}}</a></td>
+                                                    <th>{{i.upload_file_name}}</th>
+                                                    <td>{{i.file_uploaded_at}}</td>
+                                                    <td>{{i.upload_file_name}}</td>
+                                                    <td>{{i.uploaded_video_file}}</td>
+                                                    <td>{{i.uploaded_video_file.size|filesizeformat}}</td>
+                                                    <td>{{i.s3_files}}</td>
+                                                    <td>{{i.efs_file}}</td>
+
+
+
+                                                    <td>
+                                                        {% if i.random_id == 'none' %}
+                                                        {% else %}
+                                                        {% if i.transfer_status == 'requested' %}
+                                                        <a class="text-white mt-5"
+                                                            style="background-color: rgb(247, 145, 99); color: white; padding: 3px; font-size: 15px; margin-right: 20px;  border-radius: 5px; height: 40px;"
+                                                            href="#">
+                                                            processing
+                                                        </a>
+                                                        {% elif i.transfer_status == 'transfered' %}
+                                                        <a class="text-white mt-5"
+                                                            style="background-color: rgb(48, 128, 11); color: white; padding: 3px; font-size: 15px; margin-right: 20px;  border-radius: 5px; height: 40px;"
+                                                            href="#">
+                                                            completed
+                                                        </a>
+                                                        {% else %}
+                                                        <a class="text-white mt-5"
+                                                            style="background-color: rgb(179, 165, 45); color: white; padding: 3px; font-size: 15px; margin-right: 20px;  border-radius: 5px; height: 40px;"
+                                                            href="{% url 'client_file_request' i.upload_file %}">
+                                                            transfer
+                                                        </a>
+                                                        {% endif %}
+                                                        {% endif %}
+                                                    </td>
+
+
+
+
+                                                    <td>
+                                                        {% if i.random_id == 'none' %}
+
+                                                            {% else %}
+
+                                                        {% if i.transfer_status == 'not-transfer' %}
+                                                        <label class="badge text-white "
+                                                            style="padding: 5px;font-size: 13px; margin-top: 5px; margin-bottom: 10px; background-color:darkred; color: white; border-radius: 10px;">pending</label>
+                                                        {% elif i.transfer_status == 'requested' %}
+                                                        <label class="badge text-white "
+                                                            style="padding: 5px;font-size: 13px; margin-top: 5px; margin-bottom: 10px; background-color: grey; color: white; border-radius: 10px;">waiting</label>
+                                                        
+                                                        {% elif i.upload_file_transfer_status == 'transfered' %}
+                                                        <label class="badge text-white "
+                                                            style="padding: 5px;font-size: 13px; margin-top: 5px; margin-bottom: 10px; background-color:rgb(82, 117, 182); color: white; border-radius: 10px;">completed</label>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </form>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination ml-2">
+                                {% if post.has_previous %}
+                                <!-- <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li> -->
+                                <li class="page-item"><a class="page-link bg-info text-white"
+                                        href="?page={{ post.previous_page_number }}">Previous</a></li>
+                                {% endif %}
+                                {% if post.has_next %}
+                                <li class="page-item"><a class="page-link bg-info text-white"
+                                        href="?page={{ post.next_page_number }}">Next</a></li>
+                                <!-- <li class="page-item"><a class="page-link" href="?page={{ r.paginator.num_pages }}">Last &raquo;</a></li> -->
+                                {% endif %}
+                            </ul>
+                            Page {{ post.number }} of {{ post.paginator.num_pages }}.
+                        </nav>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+    </main>
+    <footer style="margin-top: 150px;">
+        <div class="footer-wrappr"
+            data-background="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/gallery/footer-bg.png">
+            <div class="footer-area footer-padding " style="height: 400px;">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo mb-25">
+                                    <a href="{% url 'client_home' %}" style="font-size: 25px; font-weight: bold;">
+                                        <img src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/img/cloudlogo.png"
+                                            width="50px" height="50px" alt="">&nbsp;&nbsp; Cloud Storage</a>
+                                </div>
+                                <div class="footer-tittle mb-50">
+                                    <p>Cloud Storage is technology that allows you to save files in storage, and then
+                                        access those files via the Cloud.</p>
+                                </div>
+                                <!-- Form -->
+
+                                <!-- social -->
+                                <!-- <div class="footer-social mt-50">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4></h4>
+                                    <ul>
+                                        <li><a href="{% url 'client_home' %}">Home</a></li>
+                                        <li><a href="{% url 'client_upload' %}">Uploads</a></li>
+                                        <li><a href="{% url 'client_myfiles' %}">My Files</a></li>
+                                        <li><a href="{% url 'client_myprofile' %}">My Profile</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Address</h4>
+                                    <ul>
+                                        <p>Sri Shankar Colony, <br>
+                                            Near Metro Station, <br>
+                                            LB.Nagar Road, <br> Hyderabad-500068 </p>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Contact</h4>
+                                    <ul>
+                                        <p> <span class="text-white">Email:</span> tweakyhycloud@gmail.com</p>
+                                        <p> <span class="text-white">Call:</span> 6300 656 232</p>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="footer-copy-right text-center">
+                                    <p>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy; Hycloud - Tweaky Hybrid Cloud Storage
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved
+                                        <br> Designed by <a href="https://codebook.in/" target="_blank"> <b
+                                                style="font-weight: bolder; color:aliceblue;">Codebook</b> </a>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/vendor/jquery-1.12.4.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/popper.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/owl.carousel.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/wow.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/animated.headline.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/gijgo.min.js"></script>
+
+    <!-- Video bg -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.vide.js"></script>
+
+    <!-- Nice-select, sticky -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.nice-select.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.barfiller.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.counterup.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/waypoints.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.countdown.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/contact.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.form.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.validate.min.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/mail-script.js"></script>
+    <script
+        src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/plugins.js"></script>
+    <script src="https://priya-tweakycloud-project.s3.ap-south-1.amazonaws.com/static/clientapp/js/main.js"></script>
+
+</body>
+
+</html>
